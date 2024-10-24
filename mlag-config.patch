@@ -1,0 +1,30 @@
+--- mlag-config.yml.orig	2024-10-24 06:36:41
++++ mlag-config.yml	2024-10-24 06:36:41
+@@ -6,13 +6,12 @@
+     data:
+       - id: 'peerlink'
+         bond:
+-          member:
+-            - id: 'swp49'
+-            - id: 'swp50'
++          member: '{{ item.members }}'
+         bridge:
+           domain:
+             - id: 'br_default'
+         type: 'peerlink'
++  with_items: "{{ mlag_config }}"
+ 
+ - name: Set mlag
+   nvidia.nvue.mlag:
+@@ -21,8 +20,9 @@
+     data:
+       enable: 'on'
+       init_delay: 100
+-      mac_address: '{{ mlag_mac }}'
++      mac_address: '{{ item.mlag_mac }}'
+       backup:
+-        - id: '{{ mlag_backup }}'
++        - id: '{{ item.mlag_backup }}'
+       peer_ip: 'linklocal'
+       priority: 1000
++  with_items: "{{ mlag_config }}"

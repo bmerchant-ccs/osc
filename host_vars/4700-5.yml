@@ -1,0 +1,8 @@
+---
+ansible_host: "192.168.200.9"
+hostname: "4700-5"
+eth0_ip: "192.168.200.9/24"
+vlan_config: 
+  - id: 'vlan10'
+    ip: '10.1.10.9/24'
+    vlan: '10'

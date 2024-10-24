@@ -1,0 +1,15 @@
+---
+ansible_host: "192.168.200.5"
+hostname: "4700-1-B"
+eth0_ip: "192.168.200.5/24"
+lo_ip: "10.10.10.2/32"
+vlan_config: 
+  - id: 'vlan10'
+    ip: '10.1.10.5/24'
+    vlan: '10'
+mlag_config:
+  - mlag_mac: "44:38:39:BE:EF:AA"
+    mlag_backup: "10.10.10.1"
+    members:
+      - id: 'swp31'
+      - id: 'swp32'
