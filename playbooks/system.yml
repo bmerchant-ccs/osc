@@ -23,10 +23,8 @@
         data:
           hostname: '{{ item.hostname }}'
           timezone: '{{ item.timezone }}'
-     with_items: '{{ system }}' 
-     register: system
-
-         register: interface
+      with_items: '{{ system }}' 
+      register: system
 
     - name: Apply new revision
       nvidia.nvue.config:

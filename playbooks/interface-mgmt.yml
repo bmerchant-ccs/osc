@@ -15,7 +15,7 @@
         state: new
       register: revision
 
-    - name: Set interface breakouts
+    - name: Set mgmt interfaces
       nvidia.nvue.interface:
         state: merged
         revid: '{{ revision.revid }}'

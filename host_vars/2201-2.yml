@@ -1,11 +1,11 @@
 ---
 mgmt_addresses:
   - eth0_ip: "192.168.200.22/24"
-  - lo_ip: "10.10.10.1/32"
+    lo_ip: "10.10.10.1/32"
 
 system:
   - hostname: "2201-2"
-  - timezone: "America/New_York"
+    timezone: "America/New_York"
 
 vlans:
   - vlan: ['10', '20']

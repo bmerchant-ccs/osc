@@ -1,6 +1,6 @@
 ---
 - name: Test playbook to update interface settings
-  hosts: spine
+  hosts: leafs
   connection: ansible.netcommon.httpapi
   gather_facts: false
   vars:

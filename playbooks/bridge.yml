@@ -22,10 +22,7 @@
         data:
           - id: 'br_default'
             type: 'vlan-aware'
-            vlan:
-              - id: '{{ item.vlan }}'
-                vni:
-                  - id: '{{ item.vlan }}'
+            vlan: '{{ item.vlan }}'
       with_items: '{{ vlans }}'
       register: bridge
 

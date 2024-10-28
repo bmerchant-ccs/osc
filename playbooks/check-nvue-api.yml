@@ -10,8 +10,8 @@
       uri:
         url: "https://127.0.0.1:8765/nvue_v1/revision"
         validate_certs: false
-        user: "cumulus" 
-        password: "cumulus"
+        user: '{{ ansible_user }}'
+        password: '{{ ansible_password }}'
         method: "GET"
         status_code: 
           - 200

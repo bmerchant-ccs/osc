@@ -1,11 +1,11 @@
 ---
 mgmt_addresses:
   - eth0_ip: "192.168.200.2/24"
-  - lo_ip: "10.10.10.1/32"
+    lo_ip: "10.10.10.1/32"
 
 system:
   - hostname: "5600-1-A"
-  - timezone: "America/New_York"
+    timezone: "America/New_York"
 
 breakouts:
   - { id: 'swp1', breakout: '2x', lanes: '4' }
@@ -18,7 +18,7 @@ breakouts:
   - { id: 'swp62', breakout: '2x', lanes: '4' }
 
 vlans:
-  - vlan: ['10', '20']
+  - vlan: [id: '10', id: '20']
 
 vlan_interfaces:
   - { id: 'vlan10', ip: '10.1.10.2/24', vlan: '10'}
