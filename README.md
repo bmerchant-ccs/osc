@@ -3,20 +3,16 @@ Load the `OSC-switches-servers-noOOB.dot` file into Nvidia Air. Make sure the "e
 Open up the console on node oob-mgmt-server and run the following commands to setup the environment.
 
 ```
-git clone https://github.com/bmerchant-ccs/osc
-git clone https://gitlab.com/nvidia-networking/systems-engineering/nvue
 sudo apt-get update
 sudo apt-get upgrade ansible -y
 ansible-galaxy collection install nvidia.nvue
-cd nvue
-git checkout cumulus-linux-58-automation-workshop
-cp playbooks/check-nvue-api.yml ../osc/playbooks/
 ```
 
 Annoyingly you have to manually log into all switches and change the default password here otherwise the playbooks will fail authentication. Be sure to change the password in the ansible hosts file too.
 
 ```
-cd ~/osc/
+git clone https://github.com/bmerchant-ccs/osc
+cd osc/
 ansible switches -i hosts -m ping
 ansible-playbook -i hosts playbooks/check-nvue-api.yml
 ansible-playbook -i hosts playbooks/interface-mgmt.yml
