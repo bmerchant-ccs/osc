@@ -1,0 +1,38 @@
+---
+- name: Test playbook to update interface settings
+  hosts: spines
+  connection: ansible.netcommon.httpapi
+  gather_facts: false
+  vars:
+    ansible_network_os: nvidia.nvue.httpapi
+    ansible_httpapi_port: 8765
+    ansible_httpapi_use_ssl: true
+    ansible_httpapi_validate_certs: false
+
+  tasks:
+    - name: Create new revision
+      nvidia.nvue.config:
+        state: new
+      register: revision
+
+    - name: Set interface breakouts
+      nvidia.nvue.interface:
+        state: merged
+        revid: '{{ revision.revid }}'
+        data:
+          - id: '{{ item.id }}'
+            ip:
+              address: 
+                - id: '{{ item.ip }}'
+            vlan: '{{ item.vlan }}'
+            type: 'svi'
+      with_items: '{{ vlan_interfaces }}'
+      register: interface
+
+    - name: Apply new revision
+      nvidia.nvue.config:
+        state: apply
+        revid: '{{ revision.revid }}'
+        force: true
+        wait: 10
+      register: revision

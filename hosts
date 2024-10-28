@@ -1,6 +1,8 @@
-[leafs]
+[mlagleafs]
 4700-1-A
 4700-1-B
+
+[leafs]
 4700-[2:5]
 
 [spines]
@@ -15,6 +17,7 @@
 2201-[1:2]
 
 [switches:children]
+mlagleafs
 leafs
 spines
 agg
@@ -22,5 +25,4 @@ tor
 
 [switches:vars]
 ansible_user=cumulus
-ansible_password=CCSInstall123!
-timezone=Etc/UTC
+ansible_password=cumulus

@@ -1,14 +1,1 @@
----
-interfaces_up: 
-  - "swp1"
-  - "swp58"
-  - "swp59"
-  - "swp60"
-  - "swp61"
-  - "swp62"
-  - "swp63"
-  - "swp64"
-bond_config:
-  - { id: 'bond1', mlagid: 1, member: 'swp1', bridge: 'br_default'}
-  - { id: 'bond58', mlagid: 58, member: 'swp58-59', bridge: 'br_default'}
-  - { id: 'bond61', mlagid: 61, member: 'swp61-62', bridge: 'br_default'}
+

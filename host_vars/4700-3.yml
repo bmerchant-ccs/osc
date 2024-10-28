@@ -1,8 +1,17 @@
 ---
-ansible_host: "192.168.200.7"
-hostname: "4700-3"
-eth0_ip: "192.168.200.7/24"
-vlan_config: 
-  - id: 'vlan10'
-    ip: '10.1.10.7/24'
-    vlan: '10'
+mgmt_addresses:
+  - eth0_ip: "192.168.200.7/24"
+  - lo_ip: "10.10.10.1/32"
+
+system:
+  - hostname: "4700-3"
+  - timezone: "America/New_York"
+
+vlans:
+  - vlan: ['10', '20']
+
+interfaces:
+  - { id: 'swp1', bridge: 'br_default' }
+
+bonds:
+  - { id: 'bond31', members: [id: 'swp31', id: 'swp32'], bridge: 'br_default'}
