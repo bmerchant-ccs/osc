@@ -1,31 +1,69 @@
 ---
 mgmt_addresses:
-  - eth0_ip: "192.168.200.2/24"
-    lo_ip: "10.10.10.1/32"
+  - eth0_ip: "192.168.200.3/24"
+    lo_ip: "10.10.10.2/32"
 
 system:
-  - hostname: "5600-1-A"
+  - hostname: "spine-800g-02"
     timezone: "America/New_York"
 
 breakouts:
   - { id: 'swp1', breakout: '2x', lanes: '4' }
-  - { id: 'swp2', breakout: '4x', lanes: '2' }
-  - { id: 'swp3', breakout: '4x', lanes: '2' }
-  - { id: 'swp58', breakout: '2x', lanes: '4' }
+  - { id: 'swp2', breakout: '8x', lanes: '1' }
+  - { id: 'swp58', breakout: '4x', lanes: '2' }
   - { id: 'swp59', breakout: '2x', lanes: '4' }
   - { id: 'swp60', breakout: '2x', lanes: '4' }
   - { id: 'swp61', breakout: '2x', lanes: '4' }
   - { id: 'swp62', breakout: '2x', lanes: '4' }
 
 vlans:
-  - vlan: [id: '10', id: '20']
+  - vlan: 
+    id: '50'
+    id: '51'
+    id: '52'
+    id: '54'
+    id: '55'
+    id: '60'
+    id: '70'
+    id: '71'
+    id: '72'
+    id: '73'
+    id: '74'
+    id: '75'
+    id: '76'
+    id: '77'
+    id: '78'
+    id: '79'
+    id: '83'
+    id: '84'
+    id: '86'
+    id: '87'
+    id: '88'
+    id: '89'
+    id: '90'
+    id: '91'
+    id: '92'
+    id: '93'
+    id: '94'
+    id: '95'
+    id: '96'
+    id: '98'
+    id: '99'
+    id: '100'
+    id: '101'
+    id: '102'
+    id: '103'
+    id: '104'
+    id: '106'
+    id: '107'
+    id: '656'
 
-vlan_interfaces:
-  - { id: 'vlan10', ip: '10.1.10.2/24', vlan: '10'}
-  - { id: 'vlan20', ip: '10.1.20.2/24', vlan: '20'}
+#vlan_interfaces:
+#  - { id: 'vlan10', ip: '10.1.10.3/24', vlan: '10'}
+#  - { id: 'vlan20', ip: '10.1.20.3/24', vlan: '20'}
 
 mlag_config:
-  - { mlag_mac: "44:38:39:BE:EF:AB", mlag_backup: "10.10.10.2", members: [id: 'swp63', id: 'swp64'] }
+  - { mlag_mac: "44:38:39:BE:EF:AB", mlag_backup: "10.10.10.1", members: [id: 'swp63', id: 'swp64'] }
 
 mlag_bonds:
   - { id: 'bond1', mlagid: 1, members: [id: 'swp1s0'], bridge: 'br_default'}

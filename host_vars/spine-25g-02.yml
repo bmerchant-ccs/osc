@@ -1,0 +1,67 @@
+---
+ansible_host: "192.168.200.11"
+
+mgmt_addresses:
+  - eth0_ip: "192.168.200.11/24"
+    lo_ip: "10.10.10.2/32"
+
+system:
+  - hostname: "spine-25g-02"
+    timezone: "America/New_York"
+
+vlans:
+  - vlan: 
+    id: '50'
+    id: '51'
+    id: '52'
+    id: '54'
+    id: '55'
+    id: '60'
+    id: '70'
+    id: '71'
+    id: '72'
+    id: '73'
+    id: '74'
+    id: '75'
+    id: '76'
+    id: '77'
+    id: '78'
+    id: '79'
+    id: '83'
+    id: '84'
+    id: '86'
+    id: '87'
+    id: '88'
+    id: '89'
+    id: '90'
+    id: '91'
+    id: '92'
+    id: '93'
+    id: '94'
+    id: '95'
+    id: '96'
+    id: '98'
+    id: '99'
+    id: '100'
+    id: '101'
+    id: '102'
+    id: '103'
+    id: '104'
+    id: '106'
+    id: '107'
+    id: '656'
+
+mlag_config:
+  - { mlag_mac: "44:38:39:BE:EF:AC", mlag_backup: "10.10.10.1", members: [id: 'swp17', id: 'swp18'] }
+
+mlag_bonds:
+  - { id: 'bond8', mlagid: 8, members: [id: 'swp8'], bridge: 'br_default'}
+  - { id: 'bond9', mlagid: 9, members: [id: 'swp9'], bridge: 'br_default'}
+  - { id: 'bond10', mlagid: 10, members: [id: 'swp10'], bridge: 'br_default'}
+  - { id: 'bond11', mlagid: 11, members: [id: 'swp11'], bridge: 'br_default'}
+  - { id: 'bond12', mlagid: 12, members: [id: 'swp12'], bridge: 'br_default'}
+  - { id: 'bond13', mlagid: 13, members: [id: 'swp13'], bridge: 'br_default'}
+  - { id: 'bond14', mlagid: 14, members: [id: 'swp14'], bridge: 'br_default'}
+  - { id: 'bond15', mlagid: 15, members: [id: 'swp15'], bridge: 'br_default'}
+  - { id: 'bond16', mlagid: 16, members: [id: 'swp16'], bridge: 'br_default'}
+  - { id: 'bond19', mlagid: 19, members: [id: 'swp19', id: 'swp20'], bridge: 'br_default'}

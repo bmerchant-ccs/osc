@@ -1,26 +1,17 @@
-[mlagleafs]
-4700-1-A
-4700-1-B
-
-[leafs]
-4700-[2:5]
-
-[spines]
-5600-1-A
-5600-1-B
-
-[agg]
-2010-1-A
-2010-1-B
+[mlagspines]
+spine-400g-01
+spine-400g-02
+spine-800g-01
+spine-800g-02
+spine-25g-01
+spine-25g-02
 
 [tor]
-#2201-[1:2]
+eth-infra-rack06h1
+eth-infra-rack06h2
 
 [switches:children]
-mlagleafs
-leafs
-spines
-agg
+mlagspines
 tor
 
 [switches:vars]

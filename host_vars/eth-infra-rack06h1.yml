@@ -4,14 +4,20 @@ mgmt_addresses:
     lo_ip: "10.10.10.1/32"
 
 system:
-  - hostname: "2201-1"
+  - hostname: "eth-infra-rack06h1"
     timezone: "America/New_York"
 
 vlans:
-  - vlan: ['10', '20']
+  - vlan:
+    id: '656'
 
 interfaces:
   - { id: 'swp1', bridge: 'br_default' }
+  - { id: 'swp2', bridge: 'br_default' }
+  - { id: 'swp3', bridge: 'br_default' }
+  - { id: 'swp4', bridge: 'br_default' }
+  - { id: 'swp5', bridge: 'br_default' }
+  - { id: 'swp6', bridge: 'br_default' }
 
 bonds:
   - { id: 'bond49', members: [id: 'swp49', id: 'swp50'], bridge: 'br_default'}
