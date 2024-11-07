@@ -13,6 +13,7 @@ Annoyingly you have to manually log into all switches and change the default pas
 ```
 git clone https://github.com/bmerchant-ccs/osc
 cd osc/
+git checkout nvidia-air
 ansible switches -i hosts -m ping
 ansible-playbook -i hosts playbooks/check-nvue-api.yml
 ansible-playbook -i hosts playbooks/interface-mgmt.yml
