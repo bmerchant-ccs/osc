@@ -1,6 +1,6 @@
 ---
 - name: Test playbook to update interface settings
-  hosts: leafs,tor
+  hosts: leafs
   connection: ansible.netcommon.httpapi
   gather_facts: false
   vars:
