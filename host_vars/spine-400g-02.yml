@@ -14,4 +14,4 @@ system:
 #  - { id: 'vlan20', ip: '10.1.20.2/24', vlan: '20'}
 
 mlag_config:
-  - { mlag_mac: "44:38:39:BE:EF:AA", mlag_backup: "10.10.10.1", members: [id: 'swp31', id: 'swp32'] }
+  - { mlag_mac: "44:38:39:BE:EF:AA", mlag_backup: "192.168.200.4", members: [id: 'swp31', id: 'swp32'] }

@@ -40,4 +40,3 @@ vlans:
       - id: '107'
       - id: '232'
       - id: '656'
-    untagged: 'none'

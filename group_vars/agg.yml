@@ -1,85 +1,4 @@
 mlag_bonds:
-  - id: 'bond80'
-    mlagid: 80
-    members:
-      - id: 'swp8'
-    bridge: 'br_default'
-    vlan:
-      - id: '73'
-      - id: '78'
-    untagged: '78'
-  - id: 'bond90'
-    mlagid: 90
-    members:
-      - id: 'swp9'
-    bridge: 'br_default'
-    vlan:
-      - id: '71'
-      - id: '73'
-    untagged: '71'
-  - id: 'bond100'
-    mlagid: 100
-    members:
-      - id: 'swp10'
-    bridge: 'br_default'
-    vlan:
-      - id: '73'
-      - id: '78'
-    untagged: '78'
-  - id: 'bond110'
-    mlagid: 110
-    members:
-      - id: 'swp11'
-    bridge: 'br_default'
-    vlan:
-      - id: '77'
-      - id: '86'
-    untagged: '77'
-  - id: 'bond120'
-    mlagid: 120
-    members:
-      - id: 'swp12'
-    bridge: 'br_default'
-    vlan:
-      - id: '73'
-      - id: '78'
-    untagged: '78'
-  - id: 'bond130'
-    mlagid: 130
-    members:
-      - id: 'swp13'
-    bridge: 'br_default'
-    vlan:
-      - id: '73'
-      - id: '78'
-    untagged: '78'
-  - id: 'bond140'
-    mlagid: 140
-    members:
-      - id: 'swp14'
-    bridge: 'br_default'
-    vlan:
-      - id: '73'
-      - id: '74'
-    untagged: '74'
-  - id: 'bond150'
-    mlagid: 150
-    members:
-      - id: 'swp15'
-    bridge: 'br_default'
-    vlan:
-      - id: '73'
-      - id: '74'
-    untagged: '74'
-  - id: 'bond160'
-    mlagid: 160
-    members:
-      - id: 'swp16'
-    bridge: 'br_default'
-    vlan:
-      - id: '73'
-      - id: '74'
-    untagged: '74'
   - id: 'bond190'
     mlagid: 190
     members:
@@ -96,4 +15,95 @@ mlag_bonds:
       - id: '103'
       - id: '106'
       - id: '656'
-    untagged: 'none'
+
+mlag_bonds_hybrid:
+  - id: 'bond80'
+    mlagid: 80
+    lacp_bypass: 'on'
+    members:
+      - id: 'swp8'
+    bridge: 'br_default'
+    vlan:
+      - id: '73'
+      - id: '78'
+    untagged: '78'
+  - id: 'bond90'
+    mlagid: 90
+    lacp_bypass: 'on'
+    members:
+      - id: 'swp9'
+    bridge: 'br_default'
+    vlan:
+      - id: '71'
+      - id: '73'
+    untagged: '71'
+  - id: 'bond100'
+    mlagid: 100
+    lacp_bypass: 'on'
+    members:
+      - id: 'swp10'
+    bridge: 'br_default'
+    vlan:
+      - id: '73'
+      - id: '78'
+    untagged: '78'
+  - id: 'bond110'
+    mlagid: 110
+    lacp_bypass: 'on'
+    members:
+      - id: 'swp11'
+    bridge: 'br_default'
+    vlan:
+      - id: '77'
+      - id: '86'
+    untagged: '77'
+  - id: 'bond120'
+    mlagid: 120
+    lacp_bypass: 'on'
+    members:
+      - id: 'swp12'
+    bridge: 'br_default'
+    vlan:
+      - id: '73'
+      - id: '78'
+    untagged: '78'
+  - id: 'bond130'
+    mlagid: 130
+    lacp_bypass: 'on'
+    members:
+      - id: 'swp13'
+    bridge: 'br_default'
+    vlan:
+      - id: '73'
+      - id: '78'
+    untagged: '78'
+  - id: 'bond140'
+    mlagid: 140
+    lacp_bypass: 'on'
+    members:
+      - id: 'swp14'
+    bridge: 'br_default'
+    vlan:
+      - id: '73'
+      - id: '74'
+    untagged: '74'
+  - id: 'bond150'
+    mlagid: 150
+    lacp_bypass: 'on'
+    members:
+      - id: 'swp15'
+    bridge: 'br_default'
+    vlan:
+      - id: '73'
+      - id: '74'
+    untagged: '74'
+  - id: 'bond160'
+    mlagid: 160
+    lacp_bypass: 'on'
+    members:
+      - id: 'swp16'
+    bridge: 'br_default'
+    vlan:
+      - id: '73'
+      - id: '74'
+    untagged: '74'

@@ -1,6 +1,6 @@
 ---
 - name: Test playbook to update interface settings
-  hosts: spines,mlagleafs,agg
+  hosts: spine5600,spine4700,agg
   connection: ansible.netcommon.httpapi
   gather_facts: false
   vars:
@@ -15,7 +15,26 @@
         state: new
       register: revision
 
-    - name: Set interface mlag bonds
+    - name: Set interface mlag trunk bonds
+      nvidia.nvue.interface:
+        state: merged
+        revid: '{{ revision.revid }}'
+        data:
+          - id: '{{ item.id }}'
+            bond:
+              mlag:
+                enable: 'on'
+                id: '{{ item.mlagid }}'
+              member: '{{ item.members }}'
+            bridge:
+              domain:
+                - id: '{{ item.bridge }}'
+                  vlan: '{{ item.vlan }}'
+            type: 'bond'
+      with_items: "{{ mlag_bonds }}"
+      register: mlags
+
+    - name: Set interface mlag hybrid bonds
       nvidia.nvue.interface:
         state: merged
         revid: '{{ revision.revid }}'
@@ -32,8 +51,8 @@
                   vlan: '{{ item.vlan }}'
                   untagged: '{{ item.untagged }}'
             type: 'bond'
-      with_items: "{{ mlag_bonds }}"
-      register: interface
+      with_items: "{{ mlag_bonds_hybrid }}"
+      register: hybridmlags
 
     - name: Apply new revision
       nvidia.nvue.config:

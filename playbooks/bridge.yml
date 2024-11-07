@@ -23,7 +23,6 @@
           - id: 'br_default'
             type: 'vlan-aware'
             vlan: '{{ item.vlan }}'
-            untagged: '{{ item.untagged }}'
       with_items: '{{ vlans }}'
       register: bridge
 

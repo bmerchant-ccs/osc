@@ -1,6 +1,6 @@
 breakouts:
   - { id: 'swp1', breakout: '2x', lanes: '4' }
-  - { id: 'swp2', breakout: '8x', lanes: '1' }
+  - { id: 'swp3', breakout: '8x', lanes: '1' }
   - { id: 'swp58', breakout: '4x', lanes: '2' }
   - { id: 'swp59', breakout: '2x', lanes: '4' }
   - { id: 'swp60', breakout: '2x', lanes: '4' }
@@ -47,15 +47,6 @@ mlag_bonds:
       - id: '102'
       - id: '103'
       - id: '656'
-    untagged: 'none'
-  - id: 'bond11'
-    mlagid: 11
-    members:
-      - id: 'swp1s1'
-    bridge: 'br_default'
-    vlan:
-      - id: '232'
-    untagged: '232'
   - id: 'bond20'
     mlagid: 20
     members: 
@@ -98,7 +89,6 @@ mlag_bonds:
       - id: '106'
       - id: '107'
       - id: '656'
-    untagged: 'none'
   - id: 'bond21'
     mlagid: 21
     members: 
@@ -141,7 +131,6 @@ mlag_bonds:
       - id: '106'
       - id: '107'
       - id: '656'
-    untagged: 'none'
   - id: 'bond22'
     mlagid: 22
     members: 
@@ -184,34 +173,6 @@ mlag_bonds:
       - id: '106'
       - id: '107'
       - id: '656'
-    untagged: 'none'
-  - id: 'bond24'
-    mlagid: 24
-    members: 
-      - id: 'swp2s4'
-    bridge: 'br_default'
-    vlan:
-      - id: '54'
-      - id: '86'
-    untagged: '54'
-  - id: 'bond25'
-    mlagid: 25
-    members: 
-      - id: 'swp2s5'
-    bridge: 'br_default'
-    vlan:
-      - id: '54'
-      - id: '73'
-    untagged: '54'
-  - id: 'bond26'
-    mlagid: 26
-    members: 
-      - id: 'swp2s6'
-    bridge: 'br_default'
-    vlan:
-      - id: '54'
-      - id: '86'
-    untagged: '54'
   - id: 'bond580'
     mlagid: 580
     members: 
@@ -228,7 +189,6 @@ mlag_bonds:
       - id: '103'
       - id: '106'
       - id: '656'
-    untagged: 'none'
   - id: 'bond610'
     mlagid: 610
     members: 
@@ -275,4 +235,40 @@ mlag_bonds:
       - id: '107'
       - id: '232'
       - id: '656'
-    untagged: 'none'
+
+mlag_bonds_hybrid:
+  - id: 'bond11'
+    mlagid: 11
+    members:
+      - id: 'swp1s1'
+    bridge: 'br_default'
+    vlan:
+      - id: '232'
+    untagged: '232'
+  - id: 'bond24'
+    mlagid: 24
+    members: 
+      - id: 'swp2s4'
+    bridge: 'br_default'
+    vlan:
+      - id: '54'
+      - id: '86'
+    untagged: '54'
+  - id: 'bond25'
+    mlagid: 25
+    members: 
+      - id: 'swp2s5'
+    bridge: 'br_default'
+    vlan:
+      - id: '54'
+      - id: '73'
+    untagged: '54'
+  - id: 'bond26'
+    mlagid: 26
+    members: 
+      - id: 'swp2s6'
+    bridge: 'br_default'
+    vlan:
+      - id: '54'
+      - id: '86'
+    untagged: '54'
