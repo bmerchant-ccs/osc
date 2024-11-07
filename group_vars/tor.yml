@@ -1,1 +1,57 @@
+vlans:
+  - vlan:
+      - id: '656'
+    untagged: '656'
 
+interfaces:
+  - { id: 'swp1', bridge: 'br_default' }
+  - { id: 'swp2', bridge: 'br_default' }
+  - { id: 'swp3', bridge: 'br_default' }
+  - { id: 'swp4', bridge: 'br_default' }
+  - { id: 'swp5', bridge: 'br_default' }
+  - { id: 'swp6', bridge: 'br_default' }
+  - { id: 'swp7', bridge: 'br_default' }
+  - { id: 'swp8', bridge: 'br_default' }
+  - { id: 'swp9', bridge: 'br_default' }
+  - { id: 'swp10', bridge: 'br_default' }
+  - { id: 'swp11', bridge: 'br_default' }
+  - { id: 'swp12', bridge: 'br_default' }
+  - { id: 'swp13', bridge: 'br_default' }
+  - { id: 'swp14', bridge: 'br_default' }
+  - { id: 'swp15', bridge: 'br_default' }
+  - { id: 'swp16', bridge: 'br_default' }
+  - { id: 'swp17', bridge: 'br_default' }
+  - { id: 'swp18', bridge: 'br_default' }
+  - { id: 'swp19', bridge: 'br_default' }
+  - { id: 'swp20', bridge: 'br_default' }
+  - { id: 'swp21', bridge: 'br_default' }
+  - { id: 'swp22', bridge: 'br_default' }
+  - { id: 'swp23', bridge: 'br_default' }
+  - { id: 'swp24', bridge: 'br_default' }
+  - { id: 'swp25', bridge: 'br_default' }
+  - { id: 'swp26', bridge: 'br_default' }
+  - { id: 'swp27', bridge: 'br_default' }
+  - { id: 'swp28', bridge: 'br_default' }
+  - { id: 'swp29', bridge: 'br_default' }
+  - { id: 'swp30', bridge: 'br_default' }
+  - { id: 'swp31', bridge: 'br_default' }
+  - { id: 'swp32', bridge: 'br_default' }
+  - { id: 'swp33', bridge: 'br_default' }
+  - { id: 'swp34', bridge: 'br_default' }
+  - { id: 'swp35', bridge: 'br_default' }
+  - { id: 'swp36', bridge: 'br_default' }
+  - { id: 'swp37', bridge: 'br_default' }
+  - { id: 'swp38', bridge: 'br_default' }
+  - { id: 'swp39', bridge: 'br_default' }
+  - { id: 'swp40', bridge: 'br_default' }
+  - { id: 'swp41', bridge: 'br_default' }
+  - { id: 'swp42', bridge: 'br_default' }
+  - { id: 'swp43', bridge: 'br_default' }
+  - { id: 'swp44', bridge: 'br_default' }
+  - { id: 'swp45', bridge: 'br_default' }
+  - { id: 'swp46', bridge: 'br_default' }
+  - { id: 'swp47', bridge: 'br_default' }
+  - { id: 'swp48', bridge: 'br_default' }
+
+bonds:
+  - { id: 'bond49', members: [id: 'swp49', id: 'swp50'], bridge: 'br_default'}

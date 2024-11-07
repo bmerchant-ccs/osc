@@ -29,6 +29,8 @@
             bridge:
               domain:
                 - id: '{{ item.bridge }}'
+                  vlan: '{{ item.vlan }}'
+                  untagged: '{{ item.untagged }}'
             type: 'bond'
       with_items: "{{ mlag_bonds }}"
       register: interface

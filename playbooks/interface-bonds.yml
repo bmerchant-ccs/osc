@@ -15,7 +15,7 @@
         state: new
       register: revision
 
-    - name: Set interface mlag bonds
+    - name: Set interface bonds
       nvidia.nvue.interface:
         state: merged
         revid: '{{ revision.revid }}'
@@ -26,6 +26,8 @@
             bridge:
               domain:
                 - id: '{{ item.bridge }}'
+                  vlan: '{{ item.vlan }}'
+                  untagged: '{{ item.untagged }}'
             type: 'bond'
       with_items: "{{ bonds }}"
       register: interface

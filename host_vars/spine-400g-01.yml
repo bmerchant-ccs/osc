@@ -7,62 +7,9 @@ system:
   - hostname: "spine-400g-01"
     timezone: "America/New_York"
 
-breakouts:
-  - { id: 'swp11', breakout: '4x', lanes: '2' }
-
-vlans:
-  - vlan: 
-    id: '50'
-    id: '51'
-    id: '52'
-    id: '54'
-    id: '55'
-    id: '60'
-    id: '70'
-    id: '71'
-    id: '72'
-    id: '73'
-    id: '74'
-    id: '75'
-    id: '76'
-    id: '77'
-    id: '78'
-    id: '79'
-    id: '83'
-    id: '84'
-    id: '86'
-    id: '87'
-    id: '88'
-    id: '89'
-    id: '90'
-    id: '91'
-    id: '92'
-    id: '93'
-    id: '94'
-    id: '95'
-    id: '96'
-    id: '98'
-    id: '99'
-    id: '100'
-    id: '101'
-    id: '102'
-    id: '103'
-    id: '104'
-    id: '106'
-    id: '107'
-    id: '656'
+#vlan_interfaces:
+#  - { id: 'vlan10', ip: '10.1.10.2/24', vlan: '10'}
+#  - { id: 'vlan20', ip: '10.1.20.2/24', vlan: '20'}
 
 mlag_config:
   - { mlag_mac: "44:38:39:BE:EF:AA", mlag_backup: "10.10.10.2", members: [id: 'swp31', id: 'swp32'] }
-
-mlag_bonds:
-  - { id: 'bond1', mlagid: 1, members: [id: 'swp1', id: 'swp2'], bridge: 'br_default'}
-  - { id: 'bond3', mlagid: 3, members: [id: 'swp3'], bridge: 'br_default'}
-  - { id: 'bond4', mlagid: 4, members: [id: 'swp4'], bridge: 'br_default'}
-  - { id: 'bond5', mlagid: 5, members: [id: 'swp5'], bridge: 'br_default'}
-  - { id: 'bond6', mlagid: 6, members: [id: 'swp6'], bridge: 'br_default'}
-  - { id: 'bond7', mlagid: 7, members: [id: 'swp7'], bridge: 'br_default'}
-  - { id: 'bond8', mlagid: 8, members: [id: 'swp8'], bridge: 'br_default'}
-  - { id: 'bond110', mlagid: 110, members: [id: 'swp11s0'], bridge: 'br_default'}
-  - { id: 'bond110', mlagid: 111, members: [id: 'swp11s1'], bridge: 'br_default'}
-  - { id: 'bond27', mlagid: 27, members: [id: 'swp27', id: 'swp28', id: 'swp29', id: 'swp30'], bridge: 'br_default'}

@@ -1,6 +1,6 @@
 ---
-- name: Playbook to update bridge vlan settings
-  hosts: mlag
+- name: Test playbook to update interface settings
+  hosts: tor
   connection: ansible.netcommon.httpapi
   gather_facts: false
   vars:
@@ -26,6 +26,33 @@
             untagged: '{{ item.untagged }}'
       with_items: '{{ vlans }}'
       register: bridge
+
+    - name: Set interfaces
+      nvidia.nvue.interface:
+        state: merged
+        revid: '{{ revision.revid }}'
+        data:
+          - id: '{{ item.id }}'
+            bridge:
+              domain:
+                - id: '{{ item.bridge }}'
+      with_items: '{{ interfaces }}'
+      register: interface
+
+    - name: Set interface bonds
+      nvidia.nvue.interface:
+        state: merged
+        revid: '{{ revision.revid }}'
+        data:
+          - id: '{{ item.id }}'
+            bond:
+              member: '{{ item.members }}'
+            bridge:
+              domain:
+                - id: '{{ item.bridge }}'
+            type: 'bond'
+      with_items: "{{ bonds }}"
+      register: bonds
 
     - name: Apply new revision
       nvidia.nvue.config:

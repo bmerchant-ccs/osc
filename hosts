@@ -1,8 +1,12 @@
-[mlagspines]
-spine-400g-01
-spine-400g-02
+[5600]
 spine-800g-01
 spine-800g-02
+
+[4700]
+spine-400g-01
+spine-400g-02
+
+[agg]
 spine-25g-01
 spine-25g-02
 
@@ -11,8 +15,19 @@ eth-infra-rack06h1
 eth-infra-rack06h2
 
 [switches:children]
-mlagspines
+5600
+4700
+agg
 tor
+
+[breakout:children]
+5600
+4700
+
+[mlag:children]
+5600
+4700
+agg
 
 [switches:vars]
 ansible_user=cumulus
