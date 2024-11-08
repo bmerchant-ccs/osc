@@ -24,12 +24,9 @@
             ip:
               address:
                 - id: '{{ item.eth0_ip }}'
+              gateway:
+                - id: '{{ item.eth0_gateway }}'
             type: 'eth'
-          - id: lo
-            ip:
-              address:
-                - id: '{{ item.lo_ip }}'
-            type: 'loopback'
       with_items: '{{ mgmt_addresses }}'
       register: interface
 
