@@ -54,4 +54,4 @@ interfaces:
   - { id: 'swp48', bridge: 'br_default' }
 
 bonds:
-  - { id: 'bond49', members: [id: 'swp49', id: 'swp50'], bridge: 'br_default'}
+  - { id: 'bond49', members: [id: 'swp49', id: 'swp51'], bridge: 'br_default'}

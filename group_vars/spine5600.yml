@@ -1,7 +1,7 @@
 breakouts:
   - { id: 'swp1', breakout: '2x', lanes: '4' }
   - { id: 'swp3', breakout: '8x', lanes: '1' }
-  - { id: 'swp58', breakout: '4x', lanes: '2' }
+  - { id: 'swp57', breakout: '8x', lanes: '1' }
   - { id: 'swp59', breakout: '2x', lanes: '4' }
   - { id: 'swp60', breakout: '2x', lanes: '4' }
   - { id: 'swp61', breakout: '2x', lanes: '4' }
@@ -173,11 +173,11 @@ mlag_bonds:
       - id: '106'
       - id: '107'
       - id: '656'
-  - id: 'bond580'
-    mlagid: 580
+  - id: 'bond570'
+    mlagid: 570
     members: 
-      - id: 'swp58s0'
-      - id: 'swp58s1'
+      - id: 'swp57s0'
+      - id: 'swp57s1'
     bridge: 'br_default'
     vlan:
       - id: '73'

@@ -1,5 +1,5 @@
 ---
-ansible_host: "192.168.200.5"
+ansible_host: "199.18.243.23"
 
 mgmt_addresses:
   - eth0_ip: "199.18.243.23/24"
@@ -7,11 +7,11 @@ mgmt_addresses:
 
 system:
   - hostname: "spine-400g-02"
-    timezone: "America/New_York"
+    timezone: "US/Eastern"
 
 #vlan_interfaces:
 #  - { id: 'vlan10', ip: '10.1.10.2/24', vlan: '10'}
 #  - { id: 'vlan20', ip: '10.1.20.2/24', vlan: '20'}
 
 mlag_config:
-  - { mlag_mac: "44:38:39:BE:EF:AA", mlag_backup: "192.168.200.4", members: [id: 'swp31', id: 'swp32'] }
+  - { mlag_mac: "44:38:39:BE:EF:AA", mlag_backup: "199.18.243.22", members: [id: 'swp31', id: 'swp32'] }

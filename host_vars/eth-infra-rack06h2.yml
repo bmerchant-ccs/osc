@@ -1,5 +1,5 @@
 ---
-ansible_host: "192.168.200.22"
+ansible_host: "199.18.243.19"
 
 mgmt_addresses:
   - eth0_ip: "199.18.243.19/24"
@@ -7,7 +7,7 @@ mgmt_addresses:
 
 system:
   - hostname: "eth-infra-rack06h2"
-    timezone: "America/New_York"
+    timezone: "US/Eastern"
 
 #vlan_interfaces:
 #  - { id: 'vlan656', ip: '10.1.10.2/24', vlan: '656'}

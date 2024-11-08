@@ -1,0 +1,22 @@
+set service dns mgmt server 192.148.247.28
+set service dns mgmt server 192.148.247.29
+set service dns mgmt server 192.148.247.30
+set service dns mgmt search osc.edu
+set service dns mgmt search infra.osc.edu
+set service dns mgmt search ten.osc.edu
+set service ntp mgmt server 192.148.247.28 iburst on
+set service ntp mgmt server 192.148.247.29 iburst on
+set service ntp mgmt server 192.148.247.30 iburst on
+set service snmp-server readonly-community osc-snmp-community access any
+set service syslog mgmt server 192.148.247.17 port 514
+set system aaa user osc role system-admin
+set system password-hardening state disabled
+set system aaa user oxidized role nvue-monitor
+set system aaa tacacs server 5 host 131.187.65.29
+set system aaa tacacs vrf mgmt
+set system aaa authentication-order 5 tacacs
+set system aaa authentication-order 10 local
+set system aaa tacacs enable on
+#set system aaa tacacs server 5 secret 'xxxxxxxxxx'
+#set system aaa user oxidized password
+#set system aaa user osc password

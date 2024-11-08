@@ -1,5 +1,5 @@
 breakouts:
-  - { id: 'swp11', breakout: '4x', lanes: '1' }
+  - { id: 'swp11', breakout: '4x', lanes: '2' }
 
 mlag_bonds:
   - id: 'bond10'

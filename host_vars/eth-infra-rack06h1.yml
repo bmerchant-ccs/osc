@@ -1,5 +1,5 @@
 ---
-ansible_host: "192.168.200.21"
+ansible_host: "199.18.243.18"
 
 mgmt_addresses:
   - eth0_ip: "199.18.243.18/24"
@@ -7,7 +7,11 @@ mgmt_addresses:
 
 system:
   - hostname: "eth-infra-rack06h1"
-    timezone: "America/New_York"
+    timezone: "US/Eastern"
+
+#commands:
+#  command:
+#    - set service snmp-server listening-address 199.18.243.18
 
 #vlan_interfaces:
 #  - { id: 'vlan656', ip: '10.1.10.2/24', vlan: '656'}
