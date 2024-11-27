@@ -18,4 +18,5 @@ ansible-playbook -i hosts playbooks/interface-breakout.yml
 ansible-playbook -i hosts playbooks/mlag.yml
 ansible-playbook -i hosts playbooks/bridge.yml
 ansible-playbook -i hosts playbooks/mlag-bonds.yml
+ansible-playbook -i hosts playbooks/commands-new.yml
 ```
